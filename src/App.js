@@ -6,7 +6,9 @@ import {
   useNavigate,
   useLocation,
 } from "react-router-dom";
-
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import { history } from "./helpers";
 import { Nav } from "./components";
 import { PrivateRoute } from "./routes";
@@ -14,7 +16,7 @@ import { Home } from "./pages/Home";
 import { Details } from "./pages/Details";
 import { Login } from "./pages/Auth";
 
-function App() {
+function Root() {
   // init custom history object to allow navigation from
   // anywhere in the react app (inside or outside components)
   history.navigate = useNavigate();
@@ -46,6 +48,16 @@ function App() {
         </Routes>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Root />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
