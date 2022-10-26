@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -21,6 +21,7 @@ function Login() {
     const rememberMe = localStorage.getItem("rememberMe") === "true";
     const user = rememberMe ? localStorage.getItem("user") : "";
     setValue("email", user);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // form validation rules

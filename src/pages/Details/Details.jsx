@@ -8,7 +8,6 @@ export { Details };
 function Details() {
   const { alphaCode } = useParams();
   const dispatch = useDispatch();
-  //const { user: authUser } = useSelector((x) => x.auth);
   const { country } = useSelector((x) => x.country);
 
   useEffect(() => {
