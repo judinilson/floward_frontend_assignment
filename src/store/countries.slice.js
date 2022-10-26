@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import env from "react-dotenv";
 import { fetchWrapper } from "../helpers";
 
 // create slice
@@ -25,7 +24,7 @@ function createInitialState() {
 }
 
 function createExtraActions() {
-  const baseUrl = env.COUNTRY_API_URL;
+  const baseUrl = process.env.REACT_APP_COUNTRY_API_URL;
 
   return {
     getAll: getAll(),

@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { history, fetchWrapper } from "../helpers";
-import env from "react-dotenv";
 
 // create slice
 
@@ -39,7 +38,7 @@ function createReducers() {
 }
 
 function createExtraActions() {
-  const baseUrl = env.API_URL;
+  const baseUrl = process.env.REACT_APP_API_URL;
 
   return {
     login: login(),

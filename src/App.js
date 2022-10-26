@@ -14,8 +14,6 @@ import { Home } from "./pages/Home";
 import { Details } from "./pages/Details";
 import { Login } from "./pages/Auth";
 
-export { App };
-
 function App() {
   // init custom history object to allow navigation from
   // anywhere in the react app (inside or outside components)
@@ -50,3 +48,5 @@ function App() {
     </div>
   );
 }
+
+export default App;
